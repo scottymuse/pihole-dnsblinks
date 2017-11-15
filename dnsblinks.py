@@ -54,4 +54,3 @@ try:
             Q_blocks.put(time.time())
 except KeyboardInterrupt:
     GPIO.cleanup()
-    print "Have a nice day"
