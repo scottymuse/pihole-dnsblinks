@@ -60,11 +60,11 @@ thread.start_new_thread(process_queues, (Q_forwards, LED_forward))
 try:
     for line in loglines:
         #print line
-        if re.search(": forwarded ", line):
+        if re.search(": reply ", line):
             Q_forwards.put(time.time())
         elif re.search(": cached ", line):
             Q_caches.put(time.time())
-        elif re.search("gravity\.list.*is", line):
+        elif re.search(" is 0.0.0.0", line):
             Q_blocks.put(time.time())
 except:
     print "Exiting"
